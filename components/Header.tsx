@@ -35,21 +35,7 @@ export function Header() {
               description="Chez Mastore, une équipe dédiée développe des solutions sur-mesure qui s’inscrivent au sein d’une offre globale à haute valeur ajoutée."
               startContent={<IconPencilUp />}
             >
-              Maitrise d'oeuvre
-            </DropdownItem>
-            <DropdownItem
-              key="maintenance"
-              description="L’expertise Mastore dans le domaine de la maintenance multi-service repose sur 10 ans d’expérience et des méthodes de travail qui nous permettent de répondre efficacement aux besoins de chacun de nos clients."
-              startContent={<IconTool />}
-            >
-              Maintenance
-            </DropdownItem>
-            <DropdownItem
-              key="travaux_specifiques"
-              description="Mastore, c’est un réseau dense et étendu de professionnels fidèles et qualifiés dans tous les métiers du bâtiment."
-              startContent={<IconTools />}
-            >
-              Travaux Spécifiques
+              Création
             </DropdownItem>
             <DropdownItem
               key="bureau_etudes"
@@ -58,11 +44,27 @@ export function Header() {
             >
               Bureau d'études
             </DropdownItem>
+            <DropdownItem
+              key="travaux_specifiques"
+              description="Mastore, c’est un réseau dense et étendu de professionnels fidèles et qualifiés dans tous les métiers du bâtiment."
+              startContent={<IconTools />}
+            >
+              Suivi de travaux
+            </DropdownItem>
+            <DropdownItem
+              key="maintenance"
+              description="L’expertise Mastore dans le domaine de la maintenance multi-service repose sur 10 ans d’expérience et des méthodes de travail qui nous permettent de répondre efficacement aux besoins de chacun de nos clients."
+              startContent={<IconTool />}
+            >
+              Maintenance
+            </DropdownItem>
+            
+           
           </DropdownMenu>
         </Dropdown>
         <NavbarItem isActive>
           <Link href="#" aria-current="page">
-            Nos Réalisations
+            Actualités
           </Link>
         </NavbarItem>
       </NavbarContent>
