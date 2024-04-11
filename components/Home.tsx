@@ -11,10 +11,9 @@ export function HomePage() {
   return (
     <div className='w-full h-full'>
         <Hero />
-        <div className="w-full flex flex-col bg-white justify-center py-20">
+        <div className="w-full flex flex-col items-center bg-white py-20">
             <TypewriterPrestation />      
-            <Prestation />
-            
+            <Prestation />    
         </div>
         <div className="w-full flex flex-col bg-white justify-center py-20">
             <TypewriterPartenaire />      

@@ -14,7 +14,7 @@ interface item {
 
 export function Card(item: item) {
   return (
-    <div className="h-[20rem] relative  flex items-center justify-center">
+    <div className="h-[25rem] relative flex items-center justify-center">
       <DirectionAwareHover imageUrl={item.img}>
         <p className="font-bold text-xl">{item.name}</p>
         <p className="font-normal text-sm">{item.description}</p>
