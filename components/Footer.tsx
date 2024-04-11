@@ -26,12 +26,6 @@ export function Footer() {
           <h4 className="text-lg font-semibold mb-4">Mentions légales</h4>
           <ul>
             <li>
-              <Link href="/confidentialite" className="hover:text-stone-200">Confidentialité</Link>
-            </li>
-            <li>
-              <Link href="/conditions-utilisation" className="hover:text-stone-200">Conditions d'utilisation</Link>
-            </li>
-            <li>
               <Link href="/politique-cookies" className="hover:text-stone-200">Politique relative aux cookies</Link>
             </li>
           </ul>
@@ -41,15 +35,6 @@ export function Footer() {
           <ul>
             <li>
               <Link href="/contact" className="hover:text-stone-200">Contact</Link>
-            </li>
-            <li>
-              <Link href="/faq" className="hover:text-stone-200">FAQ</Link>
-            </li>
-            <li>
-              <Link href="/conseil-securite" className="hover:text-stone-200">Conseil de sécurité</Link>
-            </li>
-            <li>
-              <Link href="/reglages-confidentialite" className="hover:text-stone-200">Réglages de Confidentialité</Link>
             </li>
           </ul>
         </div>
