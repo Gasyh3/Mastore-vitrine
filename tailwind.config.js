@@ -17,8 +17,12 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
-    
+   
     extend: {
+      backgroundImage: {
+        
+        'helpdesk': "url('https://www.voipinfo.net/wp-content/uploads/2023/07/what-is-a-multi-line-phone-system-and-is-it-the-right-one-for-your-business.jpg')",
+      },
       animation: {
         aurora: "aurora 60s linear infinite",
         scroll:

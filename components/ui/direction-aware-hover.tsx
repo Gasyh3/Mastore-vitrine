@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/utils/cn";
+import Helpdesk from "@/assets/helpdesk.jpg";
 
 export const DirectionAwareHover = ({
   imageUrl,
@@ -11,12 +12,15 @@ export const DirectionAwareHover = ({
   childrenClassName,
   imageClassName,
   className,
+  cardWidth,
 }: {
   imageUrl: string;
   children: React.ReactNode | string;
   childrenClassName?: string;
   imageClassName?: string;
   className?: string;
+  cardWidth?: string;
+
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -66,7 +70,7 @@ export const DirectionAwareHover = ({
       onMouseEnter={handleMouseEnter}
       ref={ref}
       className={cn(
-        "md:h-96 w-60 h-60 md:w-96 bg-transparent rounded-lg overflow-hidden group/card relative",
+        `w-${cardWidth} h-96 md:w-${cardWidth} md:h-96 bg-transparent rounded-lg overflow-hidden group/card relative`, // Utilisation des props pour définir la taille de la carte
         className
       )}
     >
@@ -92,8 +96,8 @@ export const DirectionAwareHover = ({
                 "h-full w-full object-cover scale-[1.15]",
                 imageClassName
               )}
-              width="1200"
-              height="1200"
+              width="1000"
+              height="1000"
               src={imageUrl}
             />
           </motion.div>
@@ -115,6 +119,7 @@ export const DirectionAwareHover = ({
     </motion.div>
   );
 };
+
 
 const variants = {
   initial: {
@@ -166,4 +171,51 @@ const textVariants = {
     x: 20,
     opacity: 1,
   },
+};
+
+export const BannerHelpdesk = ({
+  children,
+  childrenClassName,
+  imageClassName,
+  className,
+}: {
+  children: React.ReactNode | string;
+  childrenClassName?: string;
+  imageClassName?: string;
+  className?: string;
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  return (
+    <motion.div
+      ref={ref}
+      className={cn(
+        `w-full h-96 md:h-96 bg-transparent rounded-lg overflow-hidden group/card relative`, // Utilisation des props pour définir la taille de la carte
+        className
+      )}
+    >
+      <AnimatePresence mode="wait">
+        
+            <Image
+              alt="image"
+              className={cn(
+                "h-full w-full object-cover scale-[1.15]",
+                imageClassName
+              )}
+              width="1000"
+              height="1000"
+              src={Helpdesk}
+            />
+          <motion.div
+            
+            className={cn(
+              "text-black w-full flex flex-col content-center absolute bottom-4 left-4 z-40",
+              childrenClassName
+            )}
+          >
+            {children}
+          </motion.div>
+      </AnimatePresence>
+      </motion.div>
+  );
 };

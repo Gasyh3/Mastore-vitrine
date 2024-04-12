@@ -16,12 +16,12 @@ export function Header() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="#about">
             À propos
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="#specialite">
             Spécialités
           </Link>
         </NavbarItem>
@@ -33,7 +33,7 @@ export function Header() {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href="/contact">Contact</Link>
+          <Link href="#contact">Contact</Link>
         </NavbarItem>
         <NavbarItem>
           <Button as={Link} color="primary" isExternal href="https://evictum.fr/login" variant="flat">
