@@ -14,7 +14,7 @@ export function Hero() {
 
    ];
   return (
-    <ImagesSlider className="h-[40rem]" images={images}>
+    <ImagesSlider className="h-[35rem]" images={images}>
       <motion.div
         initial={{
           opacity: 0,

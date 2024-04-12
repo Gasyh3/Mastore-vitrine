@@ -4,7 +4,7 @@ import { LayoutGrid } from "@/components/ui/layout-grid";
 
 export function LayoutWork() {
   return (
-    <div className="h-full my-20 w-full">
+    <div className="h-screen py-20 w-full">
       <LayoutGrid cards={cards} />
     </div>
   );
