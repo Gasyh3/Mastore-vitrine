@@ -1,6 +1,25 @@
 "use client";
 import { TypewriterEffectSmooth, TypewriterLittleEffectSmooth } from "@/components/ui/typewriter-effect";
+import { IconPhone } from "@tabler/icons-react";
 
+
+export function TypewriterPhone() {
+  const words = [
+    {
+      text: "Besoin",
+    },
+    {
+      text: "d'assistance ?",
+      className: "text-sky-500 dark:text-sky-500",
+    },
+
+  ];
+  return (
+    <div className="flex flex-col items-center justify-center h-[10rem]">
+      <TypewriterEffectSmooth words={words as { text: string; className?: string | undefined; }[]} />
+    </div>
+  );
+}
 
 export function TypewriterPartenaire() {
   const words = [

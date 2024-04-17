@@ -3,7 +3,7 @@
 import React from 'react'
 import { Hero } from "@/components/Hero";
 import { InfiniteLogo } from '@/components/InfiniteLogo';
-import { TypewriterPartenaire, TypewriterPrestation, TypewriterAbout, TypewriterEffectContact } from '@/components/TypewriterTitle';
+import { TypewriterPhone, TypewriterPartenaire, TypewriterPrestation, TypewriterAbout, TypewriterEffectContact } from '@/components/TypewriterTitle';
 import Prestation from '@/components/Prestation';
 import { BannerContact } from '@/components/Card';
 import About from '@/components/About';
@@ -11,6 +11,7 @@ import { FormContact } from '@/components/FormContact';
 import { LayoutWork } from './Layout';
 import Banner from './Banner';
 import ScrollToTopButton from './ScrollToTop';
+import GroupButtonOnRight from './GroupButtonOnRight';
 
 export function HomePage() {
   return (
@@ -21,23 +22,22 @@ export function HomePage() {
             <About />
         </div>
         <div className="w-full flex flex-col bg-white justify-center pb-5">
-               
             <InfiniteLogo />
         </div>
          <div id="specialite" className="w-full flex flex-col items-center bg-white py-20">
             <TypewriterPrestation />      
             <LayoutWork />  
         </div>
-        <div className="w-full flex flex-col items-center bg-white py-20">
-            <TypewriterPrestation />      
-            <Prestation />    
+        <div id="phone" className="w-full flex flex-col items-center bg-white py-20">
+            <TypewriterPhone />      
+            <Banner />
         </div>
-        <Banner />
-        <BannerContact />
         <div id="contact" className="w-full flex flex-col items-center bg-white py-20">
             <TypewriterEffectContact />      
             <FormContact />    
         </div>
+
+        <GroupButtonOnRight />
         <ScrollToTopButton />
     </div>
   )

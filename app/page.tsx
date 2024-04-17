@@ -9,7 +9,7 @@ import { HomePage } from "@/components/Home";
 export default function Home() {
   return (
     <NextUIProvider>
-      <main className="h-full w-full">
+      <main className="h-full w-full bg-white">
         <Header />
         <HomePage />
         <Footer />

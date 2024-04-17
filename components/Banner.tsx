@@ -3,39 +3,23 @@ import React from "react";
 import { cn } from "@/utils/cn";
 import { IconPhone } from "@tabler/icons-react";
 import { motion } from "framer-motion";
-import Helpdesk from "@/assets/helpdesk.jpg";
+import {Image} from "@nextui-org/react";
+import { CardContact } from "./CardContact";
 
 const Banner = () => {
   return (
     <motion.div
       className={cn(
-        "w-full bg-gray-800 bg-opacity-75 rounded-lg p-8 flex flex-col gap-10",
+        "w-full bg-white bg-opacity-95 p-8 flex flex-col content-center items-center gap-10",
         "bg-cover bg-center",
         "relative"
       )}
-      style={{ backgroundImage: `url(${Helpdesk})` }}
       whileHover={{ opacity: 0.8 }}
     >
-      <h1 className={cn("md:text-4xl text-xl text-white mb-10 relative z-20 flex gap-5")}>
-        <IconPhone width="40" height="40" /> Besoin d'assistance ?
-      </h1>
-      <div className="flex flex-col gap-10">
-        <div className="w-1/2 flex flex-col border">
-          <p className="text-center mt-2 text-neutral-300 relative z-20">
-            Mastore Lyon
-          </p>
-          <h1 className={cn("md:text-4xl text-xl text-white relative z-20")}>
-            +33 6 49 60 97 57
-          </h1>
-        </div>
-        <div className="w-1/2 flex flex-col">
-          <p className="text-center mt-2 text-neutral-300 relative z-20">
-            Mastore Ouest
-          </p>
-          <h1 className={cn("md:text-4xl text-xl text-white relative z-20")}>
-            +33 4 78 41 61 49
-          </h1>
-        </div>
+      <div className="flex gap-10 w-3/4">
+      
+        <CardContact title="Mastore" num="+33 6 49 60 97 57" adresse="1 Rue du Colonnel Chambonnet - 69500 Bron" />
+        <CardContact title="Mastore Ouest" num="+33 4 78 41 61 49" adresse="12 Rue Copernic - 17440 Aytré" />
       </div>
     </motion.div>
   );

@@ -46,7 +46,7 @@ export function FormContact() {
                 description="Votre message."
                 className="max-w-xl"
             />
-            <Button className="bg-sky-500 text-white" endContent={<IconSend />}>
+            <Button className="bg-blue-500 text-white" endContent={<IconSend />}>
                 Envoyer
             </Button>
         </div>
