@@ -9,6 +9,8 @@ import { BannerContact } from '@/components/Card';
 import About from '@/components/About';
 import { FormContact } from '@/components/FormContact';
 import { LayoutWork } from './Layout';
+import Banner from './Banner';
+import ScrollToTopButton from './ScrollToTop';
 
 export function HomePage() {
   return (
@@ -30,12 +32,13 @@ export function HomePage() {
             <TypewriterPrestation />      
             <Prestation />    
         </div>
-
+        <Banner />
         <BannerContact />
         <div id="contact" className="w-full flex flex-col items-center bg-white py-20">
             <TypewriterEffectContact />      
             <FormContact />    
         </div>
+        <ScrollToTopButton />
     </div>
   )
 }
