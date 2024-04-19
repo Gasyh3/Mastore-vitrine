@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { LayoutGrid } from "@/components/ui/layout-grid";
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, RadioGroup, Radio } from "@nextui-org/react";
+import Image from "next/image";
 
 export function LayoutWork() {
 
@@ -26,11 +27,12 @@ const SkeletonOne = () => {
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         scrollBehavior={"inside"}
+        className="text-black bg-[url('/filigrane.png')] bg-cover bg-center bg-no-repeat"
       >
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">
+              <ModalHeader className="flex flex-col items-center text-2xl font-bold text-blue-900 gap-1">
                 Travaux à neufs
               </ModalHeader>
               <ModalBody>
@@ -40,7 +42,6 @@ const SkeletonOne = () => {
                   relevé de plans, réalisation des avant-projets (APS / APD), démarches administratives,
                   planification, coordination et suivi des travaux… Jusqu’à la livraison du chantier.
                 </p>
-
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="light" onPress={onClose}>
@@ -69,15 +70,16 @@ const SkeletonTwo = () => {
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         scrollBehavior={"inside"}
+      className="text-black bg-[url('/filigrane.png')] bg-cover bg-center bg-no-repeat"
       >
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">
-                Rénovation
+            <ModalHeader className="flex flex-col items-center text-2xl font-bold text-blue-900 gap-1">
+                  Rénovation
               </ModalHeader>
               <ModalBody>
-                <p>
+                <p className="text-justify">
                   Du simple rafraîchissement au lifting complet, l’exécution des travaux de rénovation
                   nécessite plus que jamais l’intervention d’une équipe de professionnels expérimentés.
                   Fidèle à son engagement, Mastore développe une approche transdisciplinaire et des facultés
@@ -114,15 +116,16 @@ const SkeletonThree = () => {
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         scrollBehavior={"inside"}
+      className="text-black bg-[url('/filigrane.png')] bg-cover bg-center bg-no-repeat"
       >
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">
-                Conseil & expertise
+              <ModalHeader className="flex flex-col items-center text-2xl font-bold text-blue-900 gap-1">
+                 Conseil & expertise
               </ModalHeader>
               <ModalBody>
-                <p>L’expertise et la qualité de service sont les piliers de notre engagement.
+                <p className="text-justify">L’expertise et la qualité de service sont les piliers de notre engagement.
                   Les prestations de travaux spécifiques de Mastore sont ainsi reconnues pour leur haut niveau d’exigence.
                   Présente dans toute la France, notre société collabore uniquement avec des artisans référencés
                   et sélectionnés avec le plus grand soin pour leurs compétences et leur professionnalisme.
@@ -156,35 +159,36 @@ const SkeletonFour = () => {
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         scrollBehavior={"inside"}
+      className="text-black bg-[url('/filigrane.png')] bg-cover bg-center bg-no-repeat"
       >
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">
-                Maintenance
+             <ModalHeader className="flex flex-col items-center text-2xl font-bold text-blue-900 gap-1">
+                 Maintenance
               </ModalHeader>
               <ModalBody>
-                <p>
+                <p className="text-justify">
                   La maintenance est au service de la fiabilité et de la performance de vos installations.
                   L’expertise Mastore dans le domaine de la maintenance multi-service repose sur 10 ans d’expérience
                   et des méthodes de travail qui nous permettent de répondre efficacement aux besoin de chacun de nos
                   clients.
                 </p>
-                <h4 className="font-bold text-blue-500">Intervention d’urgence</h4>
-                <p>
+                <h4 className="font-bold text-xl text-blue-900">Intervention d’urgence</h4>
+                <p className="text-justify">
                   Face à une urgence, la réactivité prime.
                   En cas de panne, quelle qu’elle soit, Mastore tient à disposition de ses clients des techniciens spécialisés
                   prêts à intervenir partout en France dans un délai de 24 à 48 heures maximum.
                 </p>
-                <h4 className="font-bold text-blue-500">Maintenance réglementaire</h4>
-                <p>
+                <h4 className="font-bold text-xl text-blue-900">Maintenance réglementaire</h4>
+                <p className="text-justify">
                   Votre installation électrique est-elle en conformité ?
                   Votre établissement respecte-t-il les normes d’accessibilité en vigueur ?
                   Au fait des obligations légales qui sont les vôtres,
                   les experts Mastore vous accompagnent dans toutes vos démarches de mise en conformité,
                   du diagnostic jusqu’à la réalisation des travaux correctifs.</p>
-                <h4 className="font-bold text-blue-500">Maintenance programmée</h4>
-                <p>
+                <h4 className="font-bold text-xl text-blue-900">Maintenance programmée</h4>
+                <p className="text-justify">
                   L’anticipation est la clé d’une maintenance de qualité. Entretien de vos rideaux métalliques, relamping, climatisation… :
                   toutes les interventions sont prévues à intervalles réguliers selon une liste de critères adaptés.
                   L’organisation et les procédés mis en place par Mastore permettent un maintien en état régulier de votre espace
