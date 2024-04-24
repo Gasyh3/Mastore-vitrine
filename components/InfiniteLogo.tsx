@@ -7,7 +7,7 @@ export function InfiniteLogo() {
   return (
     <div className="h-[10rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <InfiniteMovingCards
-        items={testimonials}
+        items={logos}
         direction="right"
         speed="fast"
       />
@@ -15,7 +15,7 @@ export function InfiniteLogo() {
   );
 }
 
-const testimonials = [
+const logos = [
   {
     name: "Tamaris",
     img: "https://www.centre-commercial.fr/barentin/wp-content/uploads/sites/159/2021/11/Tamaris-logo.png",

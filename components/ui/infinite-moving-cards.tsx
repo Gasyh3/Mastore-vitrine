@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "@/utils/cn";
 import React, { useEffect, useState } from "react";
 
@@ -86,10 +84,10 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="w-[200px] max-w-full relative rounded-2xl flex-shrink-0  px-8 py-6 md:w-[450px]"
+            className="w-[150px] h-[80px] max-w-full relative rounded-2xl flex-shrink-0  px-8 py-6 md:w-[150px]"
             key={item.name}
           >
-            <img src={item.img} alt={item.name} />
+            <img src={item.img} alt={item.name} width="150" height="80" />
           </li>
         ))}
       </ul>

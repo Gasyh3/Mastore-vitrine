@@ -43,7 +43,7 @@ export function Header() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/actualite" className="hover:text-blue-500">
+          <Link color="foreground" onClick={() => scrollTo('actualite')} className="hover:text-blue-500">
             Actualités
           </Link>
         </NavbarItem>

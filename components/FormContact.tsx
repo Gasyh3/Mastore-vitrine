@@ -48,7 +48,7 @@ export function FormContact() {
     return (
         <div className="w-full h-full">
             <SnackbarProvider>
-                <form ref={form as React.RefObject<HTMLFormElement>} id="formulaire" className="w-full h-full bg-white flex flex-col items-center gap-5 pb-20" onSubmit={handleSubmit}>
+                <form ref={form as React.RefObject<HTMLFormElement>} id="formulaire" className="w-full h-full bg-[url('/filigrane.png')] bg-contain bg-center bg-no-repeat flex flex-col items-center gap-5 pb-20" onSubmit={handleSubmit}>
                     <Input
                         isRequired
                         name="nom"
@@ -98,7 +98,7 @@ export function FormContact() {
                         description="Votre message."
                         className="max-w-xl"
                     />
-                    <Button className="bg-blue-500 text-white" value="submit" type="submit" endContent={<IconSend />}>
+                    <Button className="bg-sky-900 text-white" value="submit" type="submit" endContent={<IconSend />}>
                         Envoyer
                     </Button>
                 </form>

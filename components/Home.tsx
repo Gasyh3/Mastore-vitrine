@@ -1,7 +1,7 @@
 import React from 'react';
 import { Hero } from "@/components/Hero";
 import { InfiniteLogo } from '@/components/InfiniteLogo';
-import { TypewriterPhone, TypewriterPartenaire, TypewriterPrestation, TypewriterAbout, TypewriterEffectContact } from '@/components/TypewriterTitle';
+import { TypewriterStatic, TypewriterPartenaire, TypewriterPrestation, TypewriterAbout, TypewriterEffectContact } from '@/components/TypewriterTitle';
 import About from '@/components/About';
 import { FormContact } from '@/components/FormContact';
 import { LayoutWork } from './Layout';
@@ -9,6 +9,7 @@ import ScrollToTopButton from './ScrollToTop';
 import GroupButtonOnRight from './GroupButtonOnRight';
 import { PhoneContact } from './BannerContact';
 import { Element } from 'react-scroll';
+import { ActualiteHoverCards, ActualiteBigCards } from './Actualites';
 
 export function HomePage() {
   return (
@@ -32,7 +33,16 @@ export function HomePage() {
           <LayoutWork />
         </div>
       </Element>
-      <div id="phone" className="w-full flex flex-col items-center py-5">
+      <Element name="actualite" className="w-full">
+        <div className="w-full flex flex-col items-center bg-white py-5">
+          <TypewriterStatic />
+          <ActualiteHoverCards />
+        </div>
+        <div className="w-full flex flex-col items-center bg-white py-5">
+          <ActualiteBigCards />
+        </div>
+      </Element>
+      <div id="phone" className="w-full flex flex-col items-center py-10">
         <PhoneContact />
       </div>
       <Element name="contact" className="w-full">

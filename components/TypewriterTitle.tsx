@@ -2,6 +2,14 @@
 import { TypewriterEffectSmooth, TypewriterLittleEffectSmooth } from "@/components/ui/typewriter-effect";
 import { IconPhone } from "@tabler/icons-react";
 
+export function TypewriterStatic() {
+  
+  return (
+    <div className="flex flex-col items-center justify-center h-[10rem]">
+    <h1 className="text-base sm:text-xl md:text-3xl lg:text-5xl font-bold text-center">Les actus Mastore</h1>
+    </div>
+  );
+}
 
 export function TypewriterPhone() {
   const words = [

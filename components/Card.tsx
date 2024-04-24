@@ -1,16 +1,17 @@
 "use client";
 
-import { BannerHelpdesk, DirectionAwareHover } from "@/components/ui/direction-aware-hover";
+import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 import Link from "next/link";
-import Helpdesk from "@/assets/helpdesk.jpg";
-import { IconPhone } from "@tabler/icons-react";
-import { cn } from "@/utils/cn";
+import { BackgroundGradient } from "@/components/ui/background-gradient";
+import { IconAppWindow } from "@tabler/icons-react";
+import Image from "next/image";
+
 interface item {
     img: string;
     name: string;
     description: string;
     link: string;
-    cardWidth: string;
+    cardWidth?: string;
 }
 
 export function Card(item: item) {
@@ -27,39 +28,29 @@ export function Card(item: item) {
   );
 }
 
-
-export function BannerContact() {
+export function BackgroundGradientCard(item: item) {
   return (
-    <div className="h-[25rem] relative flex items-center justify-center">
-   
-      <BannerHelpdesk>
-      <div className="w-full h-full bg-slate-900 flex flex-col content-center">
-        <h1 className={cn("md:text-4xl text-xl text-white mb-10 relative z-20 flex gap-5")}>
-             <IconPhone width="40" height="40" /> Besoin d'assistance ?
-          </h1>
-      <div className="flex flex-col gap-10">
-        <div className="w-1/2 flex flex-col border">
-        <p className="text-center mt-2 text-neutral-300 relative z-20">
-            Mastore Lyon
-          </p>
-          <h1 className={cn("md:text-4xl text-xl text-white relative z-20")}>
-             +33 6 49 60 97 57
-          </h1>
-        </div>
-        <div className="w-1/2 flex flex-col">
-        <p className="text-center mt-2 text-neutral-300 relative z-20">
-            Mastore Ouest
-          </p>
-          <h1 className={cn("md:text-4xl text-xl text-white relative z-20")}>
-             +33 4 78 41 61 49
-          </h1>
+    <div>
+      <BackgroundGradient className="rounded-[22px] max-w-sm sm:p-10 bg-white dark:bg-zinc-900"> 
+        <Image
+          src={item.img}
+          alt="jordans"
+          height="400"
+          width="500"
+          className="object-contain"
+        />
+        <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
+          {item.name}
+        </p>
+ 
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          {item.description}
+        </p>
+        <button className="rounded-full px-4 py-1 text-white flex items-center space-x-1 bg-sky-900 mt-4 text-xs font-bold dark:bg-zinc-800">
+          <span>En savoir plus →</span>
           
-        </div>
-      </div>
-      </div>
-      </BannerHelpdesk>
-
+        </button>
+      </BackgroundGradient>
     </div>
   );
-
 }
