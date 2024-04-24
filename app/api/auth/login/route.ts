@@ -13,7 +13,7 @@ const createToken = async (email: string, userId: number) => {
   .sign(secret);
 }
 
-export async function POST(request: Request) {
+export async function POST(request: any) {
   try {
     const { email, password } = await request.json();
     if(!email || !password){

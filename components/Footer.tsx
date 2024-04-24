@@ -13,7 +13,7 @@ export function Footer() {
         <div className="w-full md:w-1/3 mb-8 md:mb-0 md:pr-8">
           <h4 className="text-lg font-semibold mb-4">Réseaux sociaux</h4>
           <div className="flex items-center">
-            <a href="https://www.linkedin.com/" className="mr-4">
+            <a href="https://www.linkedin.com/company/mastore/mycompany/" className="mr-4">
               <Linkedin />
             </a>
             <a href="https://www.instagram.com/" className="mr-4">
@@ -35,6 +35,9 @@ export function Footer() {
           <ul>
             <li>
               <Link href="/contact" className="hover:text-sky-500">Contact</Link>
+            </li>
+            <li>
+              <Link href="/admin" className="hover:text-sky-500">Maintenance</Link>
             </li>
           </ul>
         </div>

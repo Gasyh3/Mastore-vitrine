@@ -1,9 +1,14 @@
 import React from 'react'
+import { LoginForm } from '@/components/LoginForm';
 
-function page() {
+const Login = () => {
+  
   return (
-    <div>login</div>
+    <div className='w-full h-full flex flex-col items-center justify-center'>
+      <h1>Login</h1>
+      <LoginForm />
+    </div>
   )
 }
 
-export default page
+export default Login
