@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { prisma } from "@/lib";
+import prisma from "@/lib/prisma";
 import { SignJWT } from "jose";
 import { cookies } from "next/headers";
 import {SHA256 as sha256 } from "crypto-js"
@@ -13,41 +13,33 @@ const createToken = async (email: string, userId: number) => {
   .sign(secret);
 }
 
-export async function POST(request: any) {
-  try {
-    const { email, password } = await request.json();
+export async function POST(req: any) {
+const res = req.json()
+const { email, password } = res
+
     if(!email || !password){
         return NextResponse.json(
             {message:"Email and password is required"},
             {status: 400}
             )
     }
-    const user = await prisma.admin.findUnique({
+    const admin = await prisma.admin.findUnique({
       where:{ email, password: sha256(password).toString() }
     });
 
-    if(!user){  
+    if(!admin){  
         return NextResponse.json(
             {message:"Invalid email or password"},
             {status: 404}
             );
     } else {
-      const token = await createToken(user.email, user.id);
+      const token = await createToken(admin.email, admin.id);
       cookies().set("access_token", token);
       return NextResponse.json({
         userInfo:{
-          id:user.id,
-          email:user.email,
+          id:admin.id,
+          email:admin.email,
         }
       })
     }
-
-  } catch (error) {
-    return NextResponse.json(
-      { message: "An unexpected error occurred." },
-      { status: 500 }
-    );
   }
-}
-
-export default prisma;

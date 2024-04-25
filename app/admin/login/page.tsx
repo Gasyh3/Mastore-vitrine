@@ -4,9 +4,9 @@ import { LoginForm } from '@/components/LoginForm';
 const Login = () => {
   
   return (
-    <div className='w-full h-full flex flex-col items-center justify-center'>
-      <h1>Login</h1>
+    <div className='w-full h-full flex flex-col content-center justify-center'>
       <LoginForm />
+      
     </div>
   )
 }

@@ -7,14 +7,13 @@ import React, { useState } from 'react'
 import apiClient from "@/lib/api-client";
 import { ADMIN_API_ROUTES } from "@/utils";
 import { useAppStore } from "@/store";
-import { useRouter } from "next/navigation";
 import axios from "axios";
+import { redirect } from 'next/navigation'
 
 export function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setUserInfo } = useAppStore();
-  const router = useRouter();
 
   const handleLogin = async () => {
     try {
@@ -24,7 +23,7 @@ export function LoginForm() {
       });
       if (response.data.userInfo) {
         setUserInfo(response.data.userInfo);
-        router.push("/admin");
+        redirect("/admin");
         console.log("Formulaire envoyé");
       }
     } catch (error) {
@@ -35,10 +34,10 @@ export function LoginForm() {
   return (
     <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-        Bienvenue Admin
+        Bienvenu Admin !
       </h2>
       <p className="text-sky-900 text-sm max-w-sm mt-2 dark:text-neutral-300">
-        Connexion administrateur pour gérer les utilisateurs et les projets.
+        Connexion administrateur pour gérer les  posts.
       </p>
 
       <form className="my-8">
