@@ -7,17 +7,24 @@ import Image from "next/image";
 export function LayoutWork() {
 
   return (
-    <div className="h-screen w-full flex justify-center">
+    <div className="h-full md:h-screen w-full flex p-4 justify-center">
       <LayoutGrid cards={cards} />
     </div>
   );
 }
 
+  
 const SkeletonOne = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const handleClick = (e :any) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onOpen();
+  };
+
 
   return (
-    <div onClick={onOpen}>
+    <div onClick={handleClick}>
       <p className="font-bold text-4xl text-white">Travaux</p>
       <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
@@ -58,9 +65,16 @@ const SkeletonOne = () => {
 
 const SkeletonTwo = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+const handleClick = (e :any) => {
+    e.preventDefault();
+
+    e.stopPropagation();
+    onOpen();
+  };
+
 
   return (
-    <div onClick={onOpen}>
+    <div onClick={handleClick}>
       <p className="font-bold text-4xl text-white">Rénovation</p>
       <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
@@ -104,9 +118,15 @@ const SkeletonTwo = () => {
 const SkeletonThree = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [scrollBehavior, setScrollBehavior] = useState("inside");
+const handleClick = (e :any) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onOpen();
+  };
+
 
   return (
-    <div onClick={onOpen}>
+    <div onClick={handleClick}>
       <p className="font-bold text-4xl text-white">Conseils & expertise</p>
       <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
@@ -147,9 +167,15 @@ const SkeletonThree = () => {
 
 const SkeletonFour = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+const handleClick = (e :any) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onOpen();
+  };
+
 
   return (
-    <div onClick={onOpen}>
+    <div onClick={handleClick}>
       <p className="font-bold text-4xl text-white">Maintenance</p>
       <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">Dégât des eaux, incendie, acte de vandalisme ?

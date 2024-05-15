@@ -9,7 +9,7 @@ import ScrollToTopButton from './ScrollToTop';
 import GroupButtonOnRight from './GroupButtonOnRight';
 import { PhoneContact } from './BannerContact';
 import { Element } from 'react-scroll';
-import { ActualiteHoverCards, ActualiteBigCards } from './Actualites';
+import { ActualiteBigCards } from './Actualites';
 
 export function HomePage() {
   return (
@@ -36,9 +36,6 @@ export function HomePage() {
       <Element name="actualite" className="w-full">
         <div className="w-full flex flex-col items-center bg-white py-5">
           <TypewriterStatic />
-          <ActualiteHoverCards />
-        </div>
-        <div className="w-full flex flex-col items-center bg-white py-5">
           <ActualiteBigCards />
         </div>
       </Element>
@@ -46,8 +43,7 @@ export function HomePage() {
         <PhoneContact />
       </div>
       <Element name="contact" className="w-full">
-        <div className="w-full flex flex-col items-center bg-white py-5">
-          <TypewriterEffectContact />
+        <div className="w-full flex flex-col items-center bg-white py-5 ">
           <FormContact />
         </div>
       </Element>

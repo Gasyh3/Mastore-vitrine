@@ -15,8 +15,10 @@ model Post {
   content   String?
   imgUrls   String[]
   url       String
-  published Boolean @default(false)
+  published Boolean @default(true)
   authorId  String?
+  createdAt DateTime @default(now())
+
 }
 model Admin {
   id Int @default(autoincrement()) @id

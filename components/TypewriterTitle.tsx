@@ -6,7 +6,7 @@ export function TypewriterStatic() {
   
   return (
     <div className="flex flex-col items-center justify-center h-[10rem]">
-    <h1 className="text-base sm:text-xl md:text-3xl lg:text-5xl font-bold text-center">Les actus Mastore</h1>
+    <h1 className="text-2xl sm:text-xl md:text-3xl lg:text-5xl font-bold text-center">Les actus Mastore</h1>
     </div>
   );
 }
@@ -121,7 +121,7 @@ export function TypewriterAboutPeople() {
 export function TypewriterAboutMoney() {
   const words = [
     {
-      text: "100 M€ ",
+      text: "7 M€ ",
       className: "text-sky-500 dark:text-sky-500",
     },
     {

@@ -12,7 +12,7 @@ function ScrollToTopButton() {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.pageYOffset > 0) {
+            if (window.scrollY > 0) {
                 controls.start('show');
             } else {
                 controls.start('hide');

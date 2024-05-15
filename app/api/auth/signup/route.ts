@@ -1,20 +1,23 @@
 
 import { NextResponse } from "next/server"
-import prisma from '@/lib/prisma'
+import { PrismaClient } from "@prisma/client";
 import {SHA256 as sha256 } from "crypto-js"
+const prisma = new PrismaClient();
 
-const alg="HS256";
-export async function POST(req: any) {
-const res = req.json()
-const { email, password } = res
+export async function POST(request: any) {
+  try {
+    const data = await request.json();
 
-const admin = await prisma.admin.create({
-    data: {
-        email: "admin@mastore.fr",
-        password: sha256("m@store42").toString(),
-    }
-})
-  return NextResponse.json({
-    admin,
-  })
+    const { email, password } = data;
+    const newUser = await prisma.admin.create({
+      data: {
+        email,
+        password: sha256(password).toString(),
+      }
+    });
+    return NextResponse.json(newUser);
+  } catch (error) {
+    console.error("Problème à la création d'admin", error);
+    return NextResponse.error();
+  }
 }

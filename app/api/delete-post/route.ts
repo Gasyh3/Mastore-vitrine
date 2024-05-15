@@ -1,23 +1,21 @@
-import { prisma } from "@/lib";
 import { NextResponse } from "next/server";
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
 
-export async function DELETE(request: Request) {
+export async function DELETE(request: any) {
     try {
-        const { id } = await request.json();
-        if (!id) {
-            return NextResponse.json(
-                { message: "id is required" },
-                { status: 400 }
-            );
+        const { searchParams } = new URL(request.url);
+        const id = searchParams.get("id");
+        if (id) {
+            await prisma.post.delete({
+                where: { id },
+            });
         }
 
-        const post = await prisma.post.delete({
-            where: { id },
-        });
-
-        return NextResponse.json({
-            post,
-        });
+        return NextResponse.json(
+            { message: "Le post à bien été supprimer." },
+            { status: 200 }
+        );
     } catch (error) {
         return NextResponse.json(
             { message: "An unexpected error occurred." },

@@ -11,7 +11,6 @@ export function Hero() {
     "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
 
-
    ];
   return (
     <ImagesSlider className="h-[40rem] w-full" images={images}>
@@ -29,10 +28,10 @@ export function Hero() {
         }}
         className="z-50 flex flex-col justify-center items-center"
       >
-        <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-sky-500 to-sky-100 py-4">
+        <motion.p className="font-bold text-4xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-sky-500 to-sky-100 py-4">
           Mastore <br /> Plus de 10 années d’expérience
         </motion.p>
-        <motion.p className="text-center text-white text-lg md:text-2xl mt-4">
+        <motion.p className="text-center text-white text-xl md:text-3xl mt-4">
           dans l'agencement de vos surfaces commerciales
         </motion.p>
        

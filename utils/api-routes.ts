@@ -2,9 +2,9 @@
 
 export const ADMIN_API_ROUTES ={
    LOGIN:`${baseRoute}/auth/login`,
-   CREATE_POST:`${baseRoute}/admin/create-post`,
-   UPDATE_POST:`${baseRoute}/admin/update-post`,
-    DELETE_POST:`${baseRoute}/admin/delete-post`
+   CREATE_POST:`${baseRoute}/create-post`,
+   UPDATE_POST:`${baseRoute}/update-post`,
+    DELETE_POST:`${baseRoute}/delete-post`
 
 
 };

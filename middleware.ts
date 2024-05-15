@@ -6,12 +6,12 @@ import type { NextRequest } from "next/server";
 export async function middleware(request: NextRequest) {
   const secret = new TextEncoder().encode(process.env.JWT_KEY as string);
   try {
-    if (!request.url.includes("/login")) {
+    if (!request.url.includes("/admin/login")) {
       const token = request.cookies.get("access_token");
       if (token) {
         if (!jwtVerify(token?.value, secret)) {
           return NextResponse.redirect(
-            new URL("/login?msg='JWT Expired.'", request.url)
+            new URL("/admin/login?msg='JWT Expired.'", request.url)
           );
         }
         const { isAdmin } = decodeJwt(token.value);

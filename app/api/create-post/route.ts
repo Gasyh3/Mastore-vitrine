@@ -1,9 +1,12 @@
 import { NextResponse } from "next/server";
-import { prisma } from "@/lib";
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
 
-export async function POST(request: Request) {
+export async function POST(request: any) {
     try {
-        const { title, content, imgUrls, url } = await request.json();
+        const data = await request.json();
+        const { title, content, imgUrls, url } = data;
+
         if (!title || !content || !imgUrls || !url) {
             return NextResponse.json(
                 { message: "Title, content, and imgUrls are required" },
@@ -11,13 +14,11 @@ export async function POST(request: Request) {
             );
         }
 
-        const post = await prisma.post.create({
+        const newPost = await prisma.post.create({
             data: { title, content, imgUrls, url },
         });
 
-        return NextResponse.json({
-            post,
-        });
+        return NextResponse.json(newPost, { status: 201 });
     } catch (error) {
         return NextResponse.json(
             { message: "An unexpected error occurred." },

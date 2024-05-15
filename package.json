@@ -10,6 +10,7 @@
     "email": "email dev"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@nextui-org/image": "^2.0.25",
     "@nextui-org/modal": "^2.0.32",
     "@nextui-org/react": "^2.2.10",
